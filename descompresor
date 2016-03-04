@@ -1,0 +1,11 @@
+#!/bin/bash
+lista=`ls -d S*`
+for i in $lista; do
+	salida2=`echo $i/data`
+	lista2=`ls -d $salida2/S*[0-9]`
+	for e in $lista2; do
+		echo item: $e
+		rm $e/*md5
+		gzip -d $e/*.gz
+		done
+	done

@@ -1,0 +1,12 @@
+#!/bin/bash
+# Con esto vamos siguiendo un patron numerico de los fq que nos seleccione los
+# del mismo individuo
+for i in `seq 10 13`; 
+do
+	# Con esto vamos por cada extremo de los pair end
+	for e in `seq 1 2`; 
+	do
+		# ls *$i"ss_"$e*  
+		cat *$i"ss_"$e* > $i"ss_"$e".fq"
+	done
+done
