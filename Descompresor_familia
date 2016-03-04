@@ -1,8 +1,0 @@
-#!/bin/bash
-lista2=`ls -d data/S*[0-9]`
-for e in $lista2; do
-	echo item: $e
-	rm $e/*md5
-	gzip -d $e/*.gz
-	done
-
