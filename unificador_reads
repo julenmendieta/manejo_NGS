@@ -6,7 +6,9 @@ do
 	# Con esto vamos por cada extremo de los pair end
 	for e in `seq 1 2`; 
 	do
+		# Si queremos comprobar que se vayan a escoger los ficheros correctos comentamos el cat y descomentamos el ls
 		# ls *$i"ss_"$e*  
+		# Unificamos las reads
 		cat *$i"ss_"$e* > $i"ss_"$e".fq"
 	done
 done
