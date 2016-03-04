@@ -1,9 +1,12 @@
 #!/bin/bash
+# Guardamos todas las familias que empiezan por S
 lista=`ls -d S*`
 for i in $lista; do
+	# Dentro de la carpeta de cada familia, vamos a data y guardamos los individuos que hay en lista2
 	salida2=`echo $i/data`
 	lista2=`ls -d $salida2/S*[0-9]`
 	for e in $lista2; do
+		# Descomprimimos cada fichero
 		echo item: $e
 		rm $e/*md5
 		gzip -d $e/*.gz
