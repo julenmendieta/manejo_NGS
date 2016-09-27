@@ -1,0 +1,16 @@
+#!/bin/bash
+lista=`ls -d *[0-9]`
+for i in $lista; do
+        salida2=`echo $i/results/15-finalSort`
+        lista2=`ls -d $salida2/$i-*[0-9]`
+        for e in $lista2; do
+                fich=`ls $e/*bam`
+                echo $fich
+                nom_salida=`echo $e | cut --delimiter="/" -f4`
+                nom_salida2=`echo /home/XXXXXXXXX/qualimap-2.1.3/$nom_salida`
+                # echo $nom_salida2
+		# dir al qualimap?
+                XXXXXXX/qualimap bamqc -bam $fich -outformat PDF -outdir $nom_salida2 
+                done
+        done
+
